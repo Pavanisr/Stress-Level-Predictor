@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stress level</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" type="text/css" href="statics/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Andada+Pro:ital,wght@0,400..840;1,400..840&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+    <style>
+
+
+
+.andada-pro-uniquifier {
+  font-family: "Andada Pro", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+
+        .aleo-uniquifier {
+  font-family: "Aleo", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+        body {
+            background-image: url("{{ url_for('static', filename='car4.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed; /* Optional: Fix the background image */
+            background-blend-mode: overlay; /* Optional: Blend with background color */
+            background-color: rgba(0, 0, 0, 0.5); /* Optional: Background color for blending */
+        }
+
+        .card {
+    max-width: 500px;
+    margin: auto;
+  }
+
+  .card {
+        background: linear-gradient(to right, #ce756a, #f75c51);
+        color: white; /* Adjust text color if needed for better readability */
+        border-radius: 10px; /* Optional: to give rounded corners */
+        padding: 20px; /* Optional: to give some padding inside the card */
+    }
+    .card-header {
+        font-family: 'Andada Pro', serif;
+        font-size: 60px;
+        color: red; /* Ensure this stands out against the gradient background */
+    }
+    .card-title, .card-text {
+        font-family: 'Andada Pro', serif;
+        color: rgb(77, 2, 2); /* Adjust if needed for better readability */
+    }
+ 
+
+    
+        
+
+        
+
+       
+       
+    </style>
+   
+</head>
+<body>
+    <!--<div class="container-fluid">-->
+
+        <header style="background: linear-gradient(to right, #ce756a, #f75c51);">
+            <nav class="navbar navbar-expand-lg justify-content-end" style="background: linear-gradient(to right, #ce756a, #f75c51);">
+             
+
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active"  href="{{ url_for('index') }}" style="color: black;font-size: 25px;font-family:Libre Baskerville;font-weight: 600;">Home</a>
+                  </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="#" style="color: black;font-size: 25px;font-family:Libre Baskerville;font-weight: 600;">Information</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" style="color: black;font-size: 25px;font-family:Libre Baskerville;font-weight: 600;">Add New</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: black;font-size: 25px;font-family:Libre Baskerville;font-weight: 600;">Login</a>
+                  </li>
+                  
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('about') }}" style="color: black;font-size: 25px;font-family:Libre Baskerville;font-weight: 600;">About</a>
+                  </li>  
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: black;font-size: 25px;font-family:Libre Baskerville;font-weight: 600;">Contact Us</a>
+                  </li>    
+                
+              </ul>
+            </nav>
+          </header>
+
+        
+
+     
+
+     
+  <div class="container mt-5 card">
+    
+    <div class="card text-center" style="border: 0;">
+        <div class="card-header" style="color: red;font-family:Andada Pro, serif;font-size: 60;">
+          Stress Level High
+        </div>
+        <div class="card-body">
+          <h5 class="card-title" style="color: rgb(77, 2, 2);font-family:Andada Pro, serif">Adviced for you... </h5>
+          <p class="card-text" style="color: rgb(92, 27, 27);font-family:Andada Pro, serif">For managing high stress levels, it's essential to prioritize self-care by
+             incorporating regular physical activity, maintaining a balanced diet, and ensuring adequate sleep. 
+             Additionally, practicing mindfulness techniques such as meditation or 
+            deep breathing exercises can help reduce stress and improve overall well-being.</p>
+         
+        </div>
+        
+      </div>
+      </div>
+      
+
+    
+ </div>
+</body>
+</html>

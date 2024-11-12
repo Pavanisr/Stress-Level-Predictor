@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stress level</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" type="text/css" href="statics/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Andada+Pro:ital,wght@0,400..840;1,400..840&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+    <style>
+
+
+
+.andada-pro-uniquifier {
+  font-family: "Andada Pro", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+
+        .aleo-uniquifier {
+  font-family: "Aleo", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+        body {
+            background-image: url("{{ url_for('static', filename='bg.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed; /* Optional: Fix the background image */
+            background-blend-mode: overlay; /* Optional: Blend with background color */
+            background-color: rgba(0, 0, 0, 0.5); /* Optional: Background color for blending */
+        }
+
+        .card {
+    max-width: 500px;
+    margin: auto;
+  }
+
+  .range-container {
+      position: relative;
+      width: 100%;
+      margin-bottom: 20px; 
+    }
+    .range-input {
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 8px;
+      background: #c78b8b;
+      outline: none;
+      opacity: 0.7;
+      transition: opacity .15s ease-in-out;
+    }
+    .range-input:hover {
+      opacity: 1;
+    }
+    .range-input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      background: #4CAF50;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    .range-input::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      background: #4CAF50;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    .range-labels {
+      position: absolute;
+      top: -25px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .range-labels span {
+      position: absolute;
+      transform: translateX(-50%);
+      font-size: 12px;
+      color: #000;
+    }
+    .range-value {
+      display:inline-flex;
+      /*display: inline;*/
+      margin-top: 0px;
+      margin-left: 15px;
+      font-size: 14px;
+      color: #000;
+    }
+   
+
+    .averia-serif-libre-light {
+  font-family: "Averia Serif Libre", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 100px;
+  color: #010d24;
+}
+        .range-group {
+            display: flex;
+            flex-direction:row;
+        }
+
+        form {
+            background: linear-gradient(to right, #83a4d4, #b6fbff);
+           /* padding: 20px;*/
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /*width: 300px;}*/}
+
+            button {
+            background: linear-gradient(to right, #086b99, #234752);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            background: linear-gradient(to right, #086b99, #154757);
+        }
+
+        select {
+            background: linear-gradient(to right, #96a5ac, #aedff0);
+            /*color: #333;
+           
+           
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;*/
+        }
+
+        .marquee {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background: #f0f0f0;
+            padding: 10px 0;
+        }
+
+        .marquee span {
+            display: inline-block;
+            white-space: nowrap;
+            padding-left: 100%;
+           
+            
+            animation: marquee 7s linear infinite;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(-100%);
+                
+            }
+            to {
+                transform: translateX(-20%);
+            }
+        }
+
+       
+    </style>
+   
+</head>
+<body>
+    <!--<div class="container-fluid">-->
+
+        <header style="background: linear-gradient(to right, #83a4d4, #b6fbff);">
+            <nav class="navbar navbar-expand-lg justify-content-end" style="background: linear-gradient(to right, #83a4d4, #b6fbff);">
+             
+
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active"  href="#" style="color: black;font-size: 25px;font-family:Libre Baskerville;font-weight: 600;">Home</a>
+                  </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="#" style="color: black;font-size: 25px;font-family:Libre Baskerville;font-weight: 600;">Information</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" style="color: black;font-size: 25px;font-family:Libre Baskerville;font-weight: 600;">Add New</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: black;font-size: 25px;font-family:Libre Baskerville;font-weight: 600;">Login</a>
+                  </li>
+                  
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('about') }}" style="color: black;font-size: 25px;font-family:Libre Baskerville;font-weight: 600;">About</a>
+                  </li>  
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: black;font-size: 25px;font-family:Libre Baskerville;font-weight: 600;">Contact Us</a>
+                  </li>    
+                
+              </ul>
+            </nav>
+          </header>
+
+        <div class="marquee" style="background: none;">
+          <span><p class="averia-serif-libre-light">Check your stress level</p></span>
+          
+      </div>
+
+     
+
+     
+  <div class="container mt-5 card" style="border-color: rgb(32, 59, 145);background: linear-gradient(to right, #83a4d4, #b6fbff);">
+    <div class="card text-center" style="border: 0px;background: linear-gradient(to right, #83a4d4, #b6fbff);">
+      
+      <div class="card-body">
+
+        
+          <form class="row row-cols-lg-auto g-3 align-items-center" style="font-weight: 900;" method="POST">
+
+                <div class="range-group">
+                  <label for="customRange2" class="form-label aleo-uniquifier"  style="margin-top: 0px;margin-left: 0px;margin-right: 15px;">Rate your current anxiety level on a scale of 0 to 25</label>
+                  <div class="range-container">
+                    <input type="range" class="form-range" min="0" max="25" step="1" id="customRange2" oninput="updateValue('customRange2', 'rangeValue2')" name="range">
+                    <!--<div class="range-labels" id="rangeLabels2"></div>-->
+                  </div>
+                  <span class="range-value"><span id="rangeValue2"></span></span>
+                </div>
+            
+            
+         
+            <label for="menhis" class="aleo-uniquifier">Do you have a history of mental health issues?</label>
+          <select id="menhis" name="mental" class="andada-pro-uniquifier" required>
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+              
+          </select>
+          
+          
+
+          <div class="range-group">
+              <label for="customRange1" class="form-label aleo-uniquifier" style="margin-top: 0px;margin-left: 0px;margin-right: 15px;">Have you experienced depression symptoms </label>
+            <div class="range-container">
+              <input type="range" class="form-range" min="0" max="30" step="1" id="customRange1" oninput="updateValue('customRange1', 'rangeValue1')" name="range2">
+              <!--<div class="range-labels" id="rangeLabels1"></div>-->
+            </div>
+            <span class="range-value"><span id="rangeValue1"></span></span>
+            </div>
+
+            
+           
+            <label for="head" class="aleo-uniquifier">How frequently do you experience headaches? </label>
+            <select id="head" name="headache" class="andada-pro-uniquifier" required>
+                <option value="0">None headache</option>
+                <option value="1">Mild headache</option>
+                <option value="2">Moderate headache</option>
+                <option value="3">Severe headache</option>
+                <option value="4">Very Severe headache</option>
+                <option value="5">Extremely Severe headache</option>
+            </select>
+
+        <label for="blood_pressure" class="aleo-uniquifier">Do you have any issues with your blood pressure?</label>
+        <select id="blood_pressure" name="blood_pressure" class="andada-pro-uniquifier" required>
+            <option value="0">Very low</option>
+            <option value="1">Low</option>
+            <option value="2">Moderate</option>
+            <option value="3">High</option>
+        </select>
+        
+        
+        <label for="breathing_problem" class="aleo-uniquifier" style="margin-top: 5px;margin-left: 0px;margin-right: 15px;">Select your current level of breathing problems:</label>
+        <select id="breathing_problem" name="breathing_problem" class="andada-pro-uniquifier" required>
+            <option value="0">No breathing problems</option>
+            <option value="1">Very mild breathing problems</option>
+            <option value="2">Mild breathing problems</option>
+            <option value="3">Moderate breathing problems</option>
+            <option value="4">Severe breathing problems</option>
+            <option value="5">Very severe breathing problems</option>
+        </select>
+
+        <label for="noise_level" class="aleo-uniquifier">Please describe the noise level in your usual environment</label>
+        <select id="noise_level" name="noise_level" class="andada-pro-uniquifier" required>
+            <option value="0">No noise</option>
+            <option value="1">Very low noise</option>
+            <option value="2">Low noise</option>
+            <option value="3">Moderate noise</option>
+            <option value="4">High noise</option>
+            <option value="5">Very high noise</option>
+        </select>
+
+        <label for="study_load" class="aleo-uniquifier">How would you rate your current study load?</label>
+        <select id="study_load" name="study_load" class="andada-pro-uniquifier" required>
+            <option value="0">No Study Load: You currently have no study assignments or academic tasks.</option>
+            <option value="1">Very Light Study Load: You have very few study assignments or tasks, and they require minimal effort.</option>
+            <option value="2">Light Study Load: You have a manageable amount of study assignments or tasks that do not cause much stress.</option>
+            <option value="3">Moderate Study Load: You have a moderate amount of study assignments or tasks that require regular effort and time.</option>
+            <option value="4">Heavy Study Load: You have a significant amount of study assignments or tasks that require considerable effort and time.</option>
+            <option value="5">Very Heavy Study Load: You have an overwhelming amount of study assignments or tasks.</option>
+        </select>
+
+        <label for="future_career_concerns" class="aleo-uniquifier" style="margin-top: 10px;margin-left: 0px;margin-right: 15px;">Do you have concerns about your future career?</label>
+        <select id="future_career_concerns" name="future_career_concerns" class="andada-pro-uniquifier" required>
+            <option value="0">No concerns</option>
+            <option value="1">Minimal concerns</option>
+            <option value="2">Some concerns</option>
+            <option value="3">Moderate concerns</option>
+            <option value="4">Significant concerns</option>
+            <option value="5">Extreme concerns</option>
+        </select>
+
+        <label for="peer_pressure" class="aleo-uniquifier" style="margin-top: 5px;margin-left: 0px;margin-right: 15px;">Do you feel pressured by your peers?</label>
+        <select id="peer_pressure" name="peer_pressure" class="andada-pro-uniquifier" required>
+            <option value="0">No peer pressure</option>
+            <option value="1">Very low peer pressure</option>
+            <option value="2">Low peer pressure</option>
+            <option value="3">Moderate peer pressure</option>
+            <option value="4">High peer pressure</option>
+            <option value="5">Very high peer pressure</option>
+        </select>
+
+        <label for="extracurricular_activities" class="aleo-uniquifier">Are you involved in extracurricular activities? </label>
+        <select id="extracurricular_activities" name="extracurricular_activities" class="andada-pro-uniquifier" required>
+            <option value="0">None</option>
+            <option value="1">Minimal</option>
+            <option value="2">Low</option>
+            <option value="3">Moderate</option>
+            <option value="4">High</option>
+            <option value="5">Very High</option>
+        </select>
+
+        <label for="bullying" class="aleo-uniquifier">Have you experienced bullying in the past year?</label>
+        <select id="bullying" name="bullying" class="andada-pro-uniquifier" required>
+            <option value="0">No bullying</option>
+            <option value="1">Minimal bullying</option>
+            <option value="2">Mild bullying</option>
+            <option value="3">Moderate bullying</option>
+            <option value="4">Severe bullying</option>
+            <option value="5">Extreme bullying</option>
+        </select>
+
+  
+
+        <div class="card-footer">
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary" style="border: none;">Submit</button>
+          </div>
+        </div>
+
+
+          </form>
+          <p>{{pred}}</p>
+      
+        
+     
+      
+    </div>
+
+
+    <script>
+      function updateValue(rangeId, spanId) {
+        document.getElementById(spanId).innerText = document.getElementById(rangeId).value;
+      }
+  
+      function createLabels(rangeId, labelsContainerId) {
+        const rangeInput = document.getElementById(rangeId);
+        const labelsContainer = document.getElementById(labelsContainerId);
+        const min = parseFloat(rangeInput.min);
+        const max = parseFloat(rangeInput.max);
+        const step = parseFloat(rangeInput.step);
+  
+        for (let i = min; i <= max; i += step) {
+          const label = document.createElement('span');
+          label.innerText = i;
+          label.style.left = ((i - min) / (max - min)) * 100 + '%';
+          labelsContainer.appendChild(label);
+        }
+      }
+  
+      // Initialize labels for all range inputs
+      for (let i = 1; i <= 2; i++) {
+        createLabels(`customRange${i}`, `rangeLabels${i}`);
+      }
+    </script>
+       
+      </div>
+</body>
+</html>
